@@ -69,6 +69,7 @@ public class Generator {
                 description = description.substring(0, exampleMatcher.start()) + description.substring(exampleMatcher.end());
                 exampleMatcher = EXAMPLE_PATTERN.matcher(description);
             }
+            description = new MarkdownHandler(description).stripEmphasis().stripLinks().stripStrokes().toString();
 
             if (snippets.has(label)) {
                 final JSONObject obj = (JSONObject) snippets.get(label);
