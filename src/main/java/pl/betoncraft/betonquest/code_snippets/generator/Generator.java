@@ -34,7 +34,7 @@ public class Generator {
 
     public static void main(String[] args) throws Exception {
         Generator g = new Generator();
-        new File("snippets").mkdirs();
+        new File("../snippets").mkdirs();
 
         System.out.println("Processing events...");
         g.updateSnippets("Event", new File("snippets/events.json"), EVENTS_URL);
