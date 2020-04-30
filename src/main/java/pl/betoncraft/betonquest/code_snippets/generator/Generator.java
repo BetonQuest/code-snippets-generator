@@ -37,13 +37,13 @@ public class Generator {
         new File("../snippets").mkdirs();
 
         System.out.println("Processing events...");
-        g.updateSnippets("Event", new File("snippets/events.json"), EVENTS_URL);
+        g.updateSnippets("Event", new File("../snippets/events.json"), EVENTS_URL);
 
         System.out.println("Processing conditions...");
-        g.updateSnippets("Condition", new File("snippets/conditions.json"), CONDITIONS_URL);
+        g.updateSnippets("Condition", new File("../snippets/conditions.json"), CONDITIONS_URL);
 
         System.out.println("Processing objectives...");
-        g.updateSnippets("Objective", new File("snippets/objectives.json"), OBJECTIVES_URL);
+        g.updateSnippets("Objective", new File("../snippets/objectives.json"), OBJECTIVES_URL);
 
         g.printChangeLog();
     }
