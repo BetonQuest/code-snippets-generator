@@ -16,9 +16,9 @@ import java.util.stream.Collectors;
 public class Generator {
 
     private static final String
-            EVENTS_URL = "https://raw.githubusercontent.com/BetonQuest/BetonQuest/master/docs/07-Events-List.md",
-            CONDITIONS_URL = "https://raw.githubusercontent.com/BetonQuest/BetonQuest/master/docs/06-Conditions-List.md",
-            OBJECTIVES_URL = "https://raw.githubusercontent.com/BetonQuest/BetonQuest/master/docs/08-Objectives-List.md";
+            EVENTS_URL = "https://raw.githubusercontent.com/BetonQuest/BetonQuest/master/docs/User-Documentation/Events-List.md",
+            CONDITIONS_URL = "https://raw.githubusercontent.com/BetonQuest/BetonQuest/master/docs/User-Documentation/Conditions-List.md",
+            OBJECTIVES_URL = "https://raw.githubusercontent.com/BetonQuest/BetonQuest/master/docs/User-Documentation/Objectives-List.md";
 
     private static final Pattern EXTRACTION_PATTERN = Pattern.compile(
             "^## (?<label>.*):\\s+`(?<prefix>.*)`\\s(?<description>(\\n([^\\n#][^\\n]*)?)+)",
@@ -34,16 +34,16 @@ public class Generator {
 
     public static void main(String[] args) throws Exception {
         Generator g = new Generator();
-        new File("../snippets").mkdirs();
+        new File("./snippets").mkdirs();
 
         System.out.println("Processing events...");
-        g.updateSnippets("Event", new File("../snippets/events.json"), EVENTS_URL);
+        g.updateSnippets("Event", new File("./snippets/events.json"), EVENTS_URL);
 
         System.out.println("Processing conditions...");
-        g.updateSnippets("Condition", new File("../snippets/conditions.json"), CONDITIONS_URL);
+        g.updateSnippets("Condition", new File("./snippets/conditions.json"), CONDITIONS_URL);
 
         System.out.println("Processing objectives...");
-        g.updateSnippets("Objective", new File("../snippets/objectives.json"), OBJECTIVES_URL);
+        g.updateSnippets("Objective", new File("./snippets/objectives.json"), OBJECTIVES_URL);
 
         g.printChangeLog();
     }
