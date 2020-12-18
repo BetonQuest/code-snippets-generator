@@ -16,9 +16,9 @@ import java.util.stream.Collectors;
 public class Generator {
 
     private static final String
-            EVENTS_URL = "https://raw.githubusercontent.com/BetonQuest/BetonQuest/master/docs/User-Documentation/Events-List.md",
-            CONDITIONS_URL = "https://raw.githubusercontent.com/BetonQuest/BetonQuest/master/docs/User-Documentation/Conditions-List.md",
-            OBJECTIVES_URL = "https://raw.githubusercontent.com/BetonQuest/BetonQuest/master/docs/User-Documentation/Objectives-List.md";
+            EVENTS_URL = "https://raw.githubusercontent.com/SaltyAimbOtter/BetonQuest/master/documentation/User-Documentation/Events-List.md",
+            CONDITIONS_URL = "https://raw.githubusercontent.com/SaltyAimbOtter/BetonQuest/master/documentation/User-Documentation/Conditions-List.md",
+            OBJECTIVES_URL = "https://raw.githubusercontent.com/SaltyAimbOtter/BetonQuest/master/documentation/User-Documentation/Objectives-List.md";
 
     private static final Pattern EXTRACTION_PATTERN = Pattern.compile(
             "^## (?<label>.*):\\s+`(?<prefix>.*)`\\s(?<description>(\\n([^\\n#][^\\n]*)?)+)",
